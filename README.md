@@ -4,7 +4,7 @@ jadi disini aku pake 2 referensi:
   1. referensi1 https://github.com/chicolucio/truth-table-generator
   2. referensi2 https://github.com/tr3buchet/truths
 
-referensi ini filenya udah aku upload juga ke repo. aku ikut ke referensi1 soalnya bisa ngubah lambang operasi ("AND" jadi "X" atau NOT jadi ~) gitu trs lebih lengkap fitur2nya jadi tinggal direduksi, sebenernya referensi 2 juga sabi dan lebih simple, tapi nanti gabisa ngeganti lambang operasi (misal, "AND" gabisa diganti jadi "X" kalau pake referensi2, trs gatau kenapa aku coba operasi NOT diganti pake "~" malah beda gitu hasilnya).
+referensi ini filenya udah aku upload juga ke repo. aku ikut ke referensi1 soalnya bisa ngubah lambang operasi ("AND" jadi "X" atau NOT jadi "\~") gitu trs lebih lengkap fitur2nya jadi tinggal direduksi, sebenernya referensi 2 juga sabi dan lebih simple, tapi nanti gabisa ngeganti lambang operasi (misal, "AND" gabisa diganti jadi "X" kalau pake referensi2, trs gatau kenapa aku coba operasi NOT diganti pake "\~" malah beda gitu hasilnya).
 
 bbrp fitur yang kurang relevan dihapus dari referensi. 
 fitur yang dihapus dari referensi1 = 
