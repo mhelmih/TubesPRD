@@ -22,7 +22,7 @@ class Kebenaran:
         self.p = re.compile(r'(?<!\w)(' + '|'.join(self.basis) + r')(?!\w)')
 
 
-    def hitung(self, *args):
+    def hitung(self, *kumpulan_boolean):
         '''Mengembalikan hasil operasi booelan per barisnya'''
 
         # membuat objek untuk menampung semua basis beserta nilainya dalam 1 baris
@@ -30,7 +30,7 @@ class Kebenaran:
 
         # menampung basis ke dalam basis_class dengan membuat attribut baru
         # serta meng-assign nilai basis tersebut dalam 1 baris
-        for base, val in zip(self.basis, args):
+        for base, val in zip(self.basis, kumpulan_boolean):
             setattr(basis_class, base, val)
 
         # mengganti basis (String) pada self.persamaan dengan basis yang ada
@@ -40,8 +40,8 @@ class Kebenaran:
             item = self.p.sub(r'basis_class.\1', item)
             hasil_perhitungan.append(eval(item))
 
-        # menambahkan basis dan hasil perhitungan ke dalam 1 baris
-        baris = [getattr(basis_class, b) for b in self.basis] + hasil_perhitungan
+        # menambahkan nilai dari basis dan hasil perhitungannya ke dalam 1 baris
+        baris = [getattr(basis_class, base) for base in self.basis] + hasil_perhitungan
 
         return [int(item) for item in baris]
 
