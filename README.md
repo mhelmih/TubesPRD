@@ -1,19 +1,51 @@
 # TubesPRD
 
-jadi disini aku pake 2 referensi:
-  1. referensi1 https://github.com/chicolucio/truth-table-generator
-  2. referensi2 https://github.com/tr3buchet/truths
+### CARA MENGGUNAKAN
+1. Masukkan jumlah basis (minimal dua basis).
+2. Masukkan basis dengan jumlah yang sudah diinput sebelumnya.
+3. Masukkan jumlah output persamaan (mminimal satu persamaan).
+4. Masukkan persamaan dengan jumlah yang sudah diinput sebelumnya.
+   Operasi boolean hanya bisa menggunakan kata-kata yang valid 
+   untuk Python. Gunakan tanda kurung untuk operasi "not".
+    
+Contoh:
+>>> kebenaran
+Masukkan jumlah basis: 3
+Masukkan basis ke-1: X1
+Masukkan basis ke-2: X2
+Masukkan basis ke-3: X3
+Masukkan jumlah output persamaan: 1
+Masukkan persamaan ke-1: X1 and (not X2) or X3
++----+----+----+-----------------------+
+| X1 | X2 | X3 | X1 and (not X2) or X3 |
++----+----+----+-----------------------+
+| 0  | 0  | 0  |           0           |
+| 0  | 0  | 1  |           1           |
+| 0  | 1  | 0  |           0           |
+| 0  | 1  | 1  |           1           |
+| 1  | 0  | 0  |           1           |
+| 1  | 0  | 1  |           1           |
+| 1  | 1  | 0  |           0           |
+| 1  | 1  | 1  |           1           |
++----+----+----+-----------------------+
 
-referensi ini filenya udah aku upload juga ke repo. aku ikut ke referensi1 soalnya bisa ngubah lambang operasi ("AND" jadi "X" atau NOT jadi "\~") gitu trs lebih lengkap fitur2nya jadi tinggal direduksi, sebenernya referensi 2 juga sabi dan lebih simple, tapi nanti gabisa ngeganti lambang operasi (misal, "AND" gabisa diganti jadi "X" kalau pake referensi2, trs gatau kenapa aku coba operasi NOT diganti pake "\~" malah beda gitu hasilnya).
-
-bbrp fitur yang kurang relevan dihapus dari referensi. 
-fitur yang dihapus dari referensi1 = 
-  1. fitur buat ngeganti angka biner jadi tulisan "True-False",
-  2. fitur buat nampilin truth table pake library tabulate, atau pandas, atau lain2 (jadi stick ke pretty table aja guys)
-  3. fitur buat ngakses file lewat terminal langsung (pake argparse kaya tubes daspro)
-  4. fitur buat ngurutin jadi True duluan di beberapa baris pertama (jadinya False duluan aja biar 0 duluan yang keluar)
-  5. fitur "valuation", gatau asli ini apaan gajelas
-  6. operasi2 yang bisa digunain direduksi jadi cuma NOT, AND, sama OR
-
-intinya sih ngambil referensi 1 biar bisa ngubah lambang operasinya aja
-kalau kalian mau ubah, lgsg aja push ke masterbranchnya, gausah bikin branch.
+>>> kebenaran
+Masukkan jumlah basis: 3
+Masukkan basis ke-1: X1
+Masukkan basis ke-2: X2
+Masukkan basis ke-3: X3
+Masukkan jumlah output persamaan: 2
+Masukkan persamaan ke-1: X1 and X2 or X3
+Masukkan persamaan ke-2: (not X1) or X2 and X3
++----+----+----+-----------------+-----------------------+
+| X1 | X2 | X3 | X1 and X2 or X3 | (not X1) or X2 and X3 |
++----+----+----+-----------------+-----------------------+
+| 0  | 0  | 0  |        0        |           1           |
+| 0  | 0  | 1  |        1        |           1           |
+| 0  | 1  | 0  |        0        |           1           |
+| 0  | 1  | 1  |        1        |           1           |
+| 1  | 0  | 0  |        0        |           0           |
+| 1  | 0  | 1  |        1        |           0           |
+| 1  | 1  | 0  |        1        |           0           |
+| 1  | 1  | 1  |        1        |           1           |
++----+----+----+-----------------+-----------------------+
