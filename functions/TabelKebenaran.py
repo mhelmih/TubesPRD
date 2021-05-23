@@ -19,7 +19,7 @@ class Kebenaran:
         self.angka_basis = list(itertools.product([0, 1], repeat=len(basis)))
 
         # gunakan regex untuk mendefinisikan dan mencocokkan pola pada persamaan
-        self.p = re.compile(r'(?<!\w)(' + '|'.join(self.basis) + r')(?!\w)')
+        self.pola = re.compile(r'(?<!\w)(' + '|'.join(self.basis) + r')(?!\w)')
 
 
     def hitung(self, *kumpulan_boolean):
@@ -37,7 +37,7 @@ class Kebenaran:
         # pada basis_class, kemudian dihitung
         hasil_perhitungan = []
         for item in self.persamaan:
-            item = self.p.sub(r'basis_class.\1', item)
+            item = self.pola.sub(r'basis_class.\1', item)
             hasil_perhitungan.append(eval(item))
 
         # menambahkan nilai dari basis dan hasil perhitungannya ke dalam 1 baris
