@@ -1,4 +1,4 @@
-# TubesPRD
+# Truth Table Generator
 
 ### CARA MENGGUNAKAN
 1. Masukkan jumlah basis (minimal dua basis).
